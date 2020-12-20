@@ -1,0 +1,26 @@
+{
+  "jenovTest2App": {
+    "lotVaccin": {
+      "home": {
+        "title": "Lot Vaccins",
+        "createLabel": "Lot Vaccin erstellen",
+        "createOrEditLabel": "Lot Vaccin erstellen oder bearbeiten",
+        "notFound": "No Lot Vaccins found"
+      },
+      "created": "Lot Vaccin erstellt mit ID {{ param }}",
+      "updated": "Lot Vaccin aktualisiert mit ID {{ param }}",
+      "deleted": "Lot Vaccin gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Lot Vaccin {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Lot Vaccin"
+      },
+      "stockInitial": "Stock Initial",
+      "stockActuel": "Stock Actuel",
+      "heureInventaire": "Heure Inventaire",
+      "vaccination": "Vaccination",
+      "centre": "Centre"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "CreneauHoraire",
+  "fields": [
+    {
+      "fieldName": "capacite",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "heureDebut",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "heureFin",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "vaccination",
+      "otherEntityRelationshipName": "creneau",
+      "relationshipName": "vaccination"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "centre",
+      "otherEntityRelationshipName": "creneauHoraire",
+      "relationshipName": "centre",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201220184535",
+  "entityTableName": "creneau_horaire",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

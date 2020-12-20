@@ -1,0 +1,57 @@
+{
+  "name": "Vaccination",
+  "fields": [
+    {
+      "fieldName": "dateCreation",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dateRendezVous",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dateVaccin",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "creneauHoraire",
+      "otherEntityRelationshipName": "vaccination",
+      "relationshipName": "creneau",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "lotVaccin",
+      "otherEntityRelationshipName": "vaccination",
+      "relationshipName": "stockVaccin",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "professionnelSante",
+      "otherEntityRelationshipName": "vaccination",
+      "relationshipName": "executant",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "patient",
+      "otherEntityRelationshipName": "vaccination",
+      "relationshipName": "patient"
+    }
+  ],
+  "changelogDate": "20201220184235",
+  "entityTableName": "vaccination",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

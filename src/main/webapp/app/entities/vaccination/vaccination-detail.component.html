@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="vaccination">
+            <h2><span jhiTranslate="jenovTest2App.vaccination.detail.title">Vaccination</span> {{ vaccination.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jenovTest2App.vaccination.dateCreation">Date Creation</span></dt>
+                <dd>
+                    <span>{{ vaccination.dateCreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.vaccination.dateRendezVous">Date Rendez Vous</span></dt>
+                <dd>
+                    <span>{{ vaccination.dateRendezVous }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.vaccination.dateVaccin">Date Vaccin</span></dt>
+                <dd>
+                    <span>{{ vaccination.dateVaccin }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.vaccination.creneau">Creneau</span></dt>
+                <dd>
+                    <div *ngIf="vaccination.creneau">
+                        <a [routerLink]="['/creneau-horaire', vaccination.creneau?.id, 'view']">{{ vaccination.creneau?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.vaccination.stockVaccin">Stock Vaccin</span></dt>
+                <dd>
+                    <div *ngIf="vaccination.stockVaccin">
+                        <a [routerLink]="['/lot-vaccin', vaccination.stockVaccin?.id, 'view']">{{ vaccination.stockVaccin?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.vaccination.executant">Executant</span></dt>
+                <dd>
+                    <div *ngIf="vaccination.executant">
+                        <a [routerLink]="['/professionnel-sante', vaccination.executant?.id, 'view']">{{ vaccination.executant?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/vaccination', vaccination.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

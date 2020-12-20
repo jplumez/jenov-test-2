@@ -1,0 +1,60 @@
+{
+  "name": "Centre",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "localite",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "creneauHoraire",
+      "otherEntityRelationshipName": "centre",
+      "relationshipName": "creneauHoraire"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "lotVaccin",
+      "otherEntityRelationshipName": "centre",
+      "relationshipName": "lotVaccin"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "professionnelSante",
+      "otherEntityRelationshipName": "centre",
+      "relationshipName": "professionnelSante"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "campagne",
+      "otherEntityRelationshipName": "centre",
+      "relationshipName": "campagne"
+    }
+  ],
+  "changelogDate": "20201220184435",
+  "entityTableName": "centre",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

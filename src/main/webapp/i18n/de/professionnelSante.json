@@ -1,0 +1,25 @@
+{
+  "jenovTest2App": {
+    "professionnelSante": {
+      "home": {
+        "title": "Professionnel Santes",
+        "createLabel": "Professionnel Sante erstellen",
+        "createOrEditLabel": "Professionnel Sante erstellen oder bearbeiten",
+        "notFound": "No Professionnel Santes found"
+      },
+      "created": "Professionnel Sante erstellt mit ID {{ param }}",
+      "updated": "Professionnel Sante aktualisiert mit ID {{ param }}",
+      "deleted": "Professionnel Sante gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Professionnel Sante {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Professionnel Sante"
+      },
+      "nom": "Nom",
+      "vaccination": "Vaccination",
+      "localite": "Localite",
+      "centre": "Centre"
+    }
+  }
+}

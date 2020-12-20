@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="patient">
+            <h2><span jhiTranslate="jenovTest2App.patient.detail.title">Patient</span> {{ patient.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jenovTest2App.patient.noAvs">No Avs</span></dt>
+                <dd>
+                    <span>{{ patient.noAvs }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.patient.dateNaissance">Date Naissance</span></dt>
+                <dd>
+                    <span>{{ patient.dateNaissance }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.patient.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ patient.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.patient.prenom">Prenom</span></dt>
+                <dd>
+                    <span>{{ patient.prenom }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.patient.sexe">Sexe</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jenovTest2App.Sexe.' + patient.sexe }}">{{ patient.sexe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.patient.adresse">Adresse</span></dt>
+                <dd>
+                    <span>{{ patient.adresse }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.patient.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{ patient.telephone }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.patient.email">Email</span></dt>
+                <dd>
+                    <span>{{ patient.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.patient.numeroAssure">Numero Assure</span></dt>
+                <dd>
+                    <span>{{ patient.numeroAssure }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.patient.groupeRisque">Groupe Risque</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jenovTest2App.GroupeRisque.' + patient.groupeRisque }}">{{ patient.groupeRisque }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.patient.vaccination">Vaccination</span></dt>
+                <dd>
+                    <div *ngIf="patient.vaccination">
+                        <a [routerLink]="['/vaccination', patient.vaccination?.id, 'view']">{{ patient.vaccination?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.patient.localite">Localite</span></dt>
+                <dd>
+                    <div *ngIf="patient.localite">
+                        <a [routerLink]="['/localite', patient.localite?.id, 'view']">{{ patient.localite?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/patient', patient.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

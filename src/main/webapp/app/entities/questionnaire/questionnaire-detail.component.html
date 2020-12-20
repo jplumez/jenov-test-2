@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="questionnaire">
+            <h2><span jhiTranslate="jenovTest2App.questionnaire.detail.title">Questionnaire</span> {{ questionnaire.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jenovTest2App.questionnaire.question">Question</span></dt>
+                <dd>
+                    <span>{{ questionnaire.question }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.questionnaire.campagne">Campagne</span></dt>
+                <dd>
+                    <div *ngIf="questionnaire.campagne">
+                        <a [routerLink]="['/campagne', questionnaire.campagne?.id, 'view']">{{ questionnaire.campagne?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/questionnaire', questionnaire.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+{
+  "name": "LotVaccin",
+  "fields": [
+    {
+      "fieldName": "stockInitial",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "stockActuel",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "heureInventaire",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "vaccination",
+      "otherEntityRelationshipName": "stockVaccin",
+      "relationshipName": "vaccination"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "centre",
+      "otherEntityRelationshipName": "lotVaccin",
+      "relationshipName": "centre",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201220184635",
+  "entityTableName": "lot_vaccin",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="creneauHoraire">
+            <h2><span jhiTranslate="jenovTest2App.creneauHoraire.detail.title">Creneau Horaire</span> {{ creneauHoraire.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jenovTest2App.creneauHoraire.capacite">Capacite</span></dt>
+                <dd>
+                    <span>{{ creneauHoraire.capacite }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.creneauHoraire.heureDebut">Heure Debut</span></dt>
+                <dd>
+                    <span>{{ creneauHoraire.heureDebut }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.creneauHoraire.heureFin">Heure Fin</span></dt>
+                <dd>
+                    <span>{{ creneauHoraire.heureFin }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.creneauHoraire.centre">Centre</span></dt>
+                <dd>
+                    <div *ngIf="creneauHoraire.centre">
+                        <a [routerLink]="['/centre', creneauHoraire.centre?.id, 'view']">{{ creneauHoraire.centre?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/creneau-horaire', creneauHoraire.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

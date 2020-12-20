@@ -1,0 +1,119 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-patient-heading" jhiTranslate="jenovTest2App.patient.home.createOrEditLabel">Create or edit a Patient</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.patient.noAvs" for="field_noAvs">No Avs</label>
+                    <input type="text" class="form-control" name="noAvs" id="field_noAvs"
+                           formControlName="noAvs"/>
+                    <div *ngIf="editForm.get('noAvs')!.invalid && (editForm.get('noAvs')!.dirty || editForm.get('noAvs')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('noAvs')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.patient.dateNaissance" for="field_dateNaissance">Date Naissance</label>
+                    <div class="input-group">
+                        <input id="field_dateNaissance" type="text" class="form-control" name="dateNaissance" ngbDatepicker #dateNaissanceDp="ngbDatepicker" formControlName="dateNaissance"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateNaissanceDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.patient.nom" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                           formControlName="nom"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.patient.prenom" for="field_prenom">Prenom</label>
+                    <input type="text" class="form-control" name="prenom" id="field_prenom"
+                           formControlName="prenom"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.patient.sexe" for="field_sexe">Sexe</label>
+                    <select class="form-control" name="sexe" formControlName="sexe" id="field_sexe">
+                        <option value="M">{{ 'jenovTest2App.Sexe.M' | translate }}</option>
+                        <option value="F">{{ 'jenovTest2App.Sexe.F' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.patient.adresse" for="field_adresse">Adresse</label>
+                    <input type="text" class="form-control" name="adresse" id="field_adresse"
+                           formControlName="adresse"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.patient.telephone" for="field_telephone">Telephone</label>
+                    <input type="text" class="form-control" name="telephone" id="field_telephone"
+                           formControlName="telephone"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.patient.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.patient.numeroAssure" for="field_numeroAssure">Numero Assure</label>
+                    <input type="text" class="form-control" name="numeroAssure" id="field_numeroAssure"
+                           formControlName="numeroAssure"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.patient.groupeRisque" for="field_groupeRisque">Groupe Risque</label>
+                    <select class="form-control" name="groupeRisque" formControlName="groupeRisque" id="field_groupeRisque">
+                        <option value="PERSONNE_VULNERABLE">{{ 'jenovTest2App.GroupeRisque.PERSONNE_VULNERABLE' | translate }}</option>
+                        <option value="CORPS_MEDICAL">{{ 'jenovTest2App.GroupeRisque.CORPS_MEDICAL' | translate }}</option>
+                        <option value="CONTACT_PERSONNE_VULNERABLE">{{ 'jenovTest2App.GroupeRisque.CONTACT_PERSONNE_VULNERABLE' | translate }}</option>
+                        <option value="INSTITUTION_COMMUNAUTAIRE">{{ 'jenovTest2App.GroupeRisque.INSTITUTION_COMMUNAUTAIRE' | translate }}</option>
+                        <option value="PERSONNE_SAINE">{{ 'jenovTest2App.GroupeRisque.PERSONNE_SAINE' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.patient.vaccination" for="field_vaccination">Vaccination</label>
+                    <select class="form-control" id="field_vaccination" name="vaccination" formControlName="vaccination">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="vaccinationOption.id === editForm.get('vaccination')!.value?.id ? editForm.get('vaccination')!.value : vaccinationOption" *ngFor="let vaccinationOption of vaccinations; trackBy: trackById">{{ vaccinationOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.patient.localite" for="field_localite">Localite</label>
+                    <select class="form-control" id="field_localite" name="localite" formControlName="localite">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="localiteOption.id === editForm.get('localite')!.value?.id ? editForm.get('localite')!.value : localiteOption" *ngFor="let localiteOption of localites; trackBy: trackById">{{ localiteOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

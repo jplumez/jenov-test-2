@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-vaccination-heading" jhiTranslate="jenovTest2App.vaccination.home.createOrEditLabel">Create or edit a Vaccination</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.vaccination.dateCreation" for="field_dateCreation">Date Creation</label>
+                    <div class="d-flex">
+                        <input id="field_dateCreation" type="datetime-local" class="form-control" name="dateCreation" formControlName="dateCreation" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.vaccination.dateRendezVous" for="field_dateRendezVous">Date Rendez Vous</label>
+                    <div class="d-flex">
+                        <input id="field_dateRendezVous" type="datetime-local" class="form-control" name="dateRendezVous" formControlName="dateRendezVous" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.vaccination.dateVaccin" for="field_dateVaccin">Date Vaccin</label>
+                    <div class="d-flex">
+                        <input id="field_dateVaccin" type="datetime-local" class="form-control" name="dateVaccin" formControlName="dateVaccin" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.vaccination.creneau" for="field_creneau">Creneau</label>
+                    <select class="form-control" id="field_creneau" name="creneau" formControlName="creneau">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="creneauHoraireOption.id === editForm.get('creneau')!.value?.id ? editForm.get('creneau')!.value : creneauHoraireOption" *ngFor="let creneauHoraireOption of creneauhoraires; trackBy: trackById">{{ creneauHoraireOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.vaccination.stockVaccin" for="field_stockVaccin">Stock Vaccin</label>
+                    <select class="form-control" id="field_stockVaccin" name="stockVaccin" formControlName="stockVaccin">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="lotVaccinOption.id === editForm.get('stockVaccin')!.value?.id ? editForm.get('stockVaccin')!.value : lotVaccinOption" *ngFor="let lotVaccinOption of lotvaccins; trackBy: trackById">{{ lotVaccinOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovTest2App.vaccination.executant" for="field_executant">Executant</label>
+                    <select class="form-control" id="field_executant" name="executant" formControlName="executant">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="professionnelSanteOption.id === editForm.get('executant')!.value?.id ? editForm.get('executant')!.value : professionnelSanteOption" *ngFor="let professionnelSanteOption of professionnelsantes; trackBy: trackById">{{ professionnelSanteOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

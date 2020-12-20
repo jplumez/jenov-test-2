@@ -1,0 +1,28 @@
+{
+  "jenovTest2App": {
+    "centre": {
+      "home": {
+        "title": "Centres",
+        "createLabel": "Centre erstellen",
+        "createOrEditLabel": "Centre erstellen oder bearbeiten",
+        "notFound": "No Centres found"
+      },
+      "created": "Centre erstellt mit ID {{ param }}",
+      "updated": "Centre aktualisiert mit ID {{ param }}",
+      "deleted": "Centre gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Centre {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Centre"
+      },
+      "code": "Code",
+      "localite": "Localite",
+      "description": "Description",
+      "creneauHoraire": "Creneau Horaire",
+      "lotVaccin": "Lot Vaccin",
+      "professionnelSante": "Professionnel Sante",
+      "campagne": "Campagne"
+    }
+  }
+}

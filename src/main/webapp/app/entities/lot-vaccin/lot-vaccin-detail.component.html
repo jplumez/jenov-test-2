@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="lotVaccin">
+            <h2><span jhiTranslate="jenovTest2App.lotVaccin.detail.title">Lot Vaccin</span> {{ lotVaccin.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jenovTest2App.lotVaccin.stockInitial">Stock Initial</span></dt>
+                <dd>
+                    <span>{{ lotVaccin.stockInitial }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.lotVaccin.stockActuel">Stock Actuel</span></dt>
+                <dd>
+                    <span>{{ lotVaccin.stockActuel }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.lotVaccin.heureInventaire">Heure Inventaire</span></dt>
+                <dd>
+                    <span>{{ lotVaccin.heureInventaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.lotVaccin.centre">Centre</span></dt>
+                <dd>
+                    <div *ngIf="lotVaccin.centre">
+                        <a [routerLink]="['/centre', lotVaccin.centre?.id, 'view']">{{ lotVaccin.centre?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/lot-vaccin', lotVaccin.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
