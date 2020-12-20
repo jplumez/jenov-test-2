@@ -1,0 +1,28 @@
+{
+  "jenovTest2App": {
+    "vaccination": {
+      "home": {
+        "title": "Vaccinations",
+        "createLabel": "Vaccination erstellen",
+        "createOrEditLabel": "Vaccination erstellen oder bearbeiten",
+        "notFound": "No Vaccinations found"
+      },
+      "created": "Vaccination erstellt mit ID {{ param }}",
+      "updated": "Vaccination aktualisiert mit ID {{ param }}",
+      "deleted": "Vaccination gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Vaccination {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Vaccination"
+      },
+      "dateCreation": "Date Creation",
+      "dateRendezVous": "Date Rendez Vous",
+      "dateVaccin": "Date Vaccin",
+      "creneau": "Creneau",
+      "stockVaccin": "Stock Vaccin",
+      "executant": "Executant",
+      "patient": "Patient"
+    }
+  }
+}

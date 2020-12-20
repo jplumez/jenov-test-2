@@ -47,6 +47,24 @@ public class CacheConfiguration {
             createCache(cm, ch.jenov.test.domain.User.class.getName());
             createCache(cm, ch.jenov.test.domain.Authority.class.getName());
             createCache(cm, ch.jenov.test.domain.User.class.getName() + ".authorities");
+            createCache(cm, ch.jenov.test.domain.Campagne.class.getName());
+            createCache(cm, ch.jenov.test.domain.Campagne.class.getName() + ".questionnaires");
+            createCache(cm, ch.jenov.test.domain.Questionnaire.class.getName());
+            createCache(cm, ch.jenov.test.domain.Localite.class.getName());
+            createCache(cm, ch.jenov.test.domain.Vaccination.class.getName());
+            createCache(cm, ch.jenov.test.domain.Vaccination.class.getName() + ".patients");
+            createCache(cm, ch.jenov.test.domain.Patient.class.getName());
+            createCache(cm, ch.jenov.test.domain.Centre.class.getName());
+            createCache(cm, ch.jenov.test.domain.Centre.class.getName() + ".creneauHoraires");
+            createCache(cm, ch.jenov.test.domain.Centre.class.getName() + ".lotVaccins");
+            createCache(cm, ch.jenov.test.domain.Centre.class.getName() + ".professionnelSantes");
+            createCache(cm, ch.jenov.test.domain.Centre.class.getName() + ".campagnes");
+            createCache(cm, ch.jenov.test.domain.CreneauHoraire.class.getName());
+            createCache(cm, ch.jenov.test.domain.CreneauHoraire.class.getName() + ".vaccinations");
+            createCache(cm, ch.jenov.test.domain.LotVaccin.class.getName());
+            createCache(cm, ch.jenov.test.domain.LotVaccin.class.getName() + ".vaccinations");
+            createCache(cm, ch.jenov.test.domain.ProfessionnelSante.class.getName());
+            createCache(cm, ch.jenov.test.domain.ProfessionnelSante.class.getName() + ".vaccinations");
             // jhipster-needle-ehcache-add-entry
         };
     }

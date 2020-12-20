@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jenovTest2App.lotVaccin.home.title">Lot Vaccins</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-lot-vaccin" [routerLink]="['/lot-vaccin/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jenovTest2App.lotVaccin.home.createLabel">
+            Create a new Lot Vaccin
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="lotVaccins?.length === 0">
+        <span jhiTranslate="jenovTest2App.lotVaccin.home.notFound">No lotVaccins found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="lotVaccins && lotVaccins.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovTest2App.lotVaccin.stockInitial">Stock Initial</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovTest2App.lotVaccin.stockActuel">Stock Actuel</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovTest2App.lotVaccin.heureInventaire">Heure Inventaire</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovTest2App.lotVaccin.centre">Centre</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let lotVaccin of lotVaccins ;trackBy: trackId">
+                    <td><a [routerLink]="['/lot-vaccin', lotVaccin.id, 'view']">{{ lotVaccin.id }}</a></td>
+                    <td>{{ lotVaccin.stockInitial }}</td>
+                    <td>{{ lotVaccin.stockActuel }}</td>
+                    <td>{{ lotVaccin.heureInventaire | date:'medium' }}</td>
+                    <td>
+                        <div *ngIf="lotVaccin.centre">
+                            <a [routerLink]="['/centre', lotVaccin.centre?.id, 'view']" >{{ lotVaccin.centre?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/lot-vaccin', lotVaccin.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/lot-vaccin', lotVaccin.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(lotVaccin)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

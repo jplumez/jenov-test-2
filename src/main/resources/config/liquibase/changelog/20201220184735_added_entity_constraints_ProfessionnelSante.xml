@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity ProfessionnelSante.
+    -->
+    <changeSet id="20201220184735-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="localite_id"
+                                 baseTableName="professionnel_sante"
+                                 constraintName="fk_professionnel_sante_localite_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="localite"/>
+
+        <addForeignKeyConstraint baseColumnNames="centre_id"
+                                 baseTableName="professionnel_sante"
+                                 constraintName="fk_professionnel_sante_centre_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="centre"/>
+
+    </changeSet>
+</databaseChangeLog>

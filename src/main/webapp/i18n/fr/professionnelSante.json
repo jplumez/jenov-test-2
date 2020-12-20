@@ -1,0 +1,25 @@
+{
+  "jenovTest2App": {
+    "professionnelSante": {
+      "home": {
+        "title": "ProfessionnelSantes",
+        "createLabel": "Créer un nouveau Professionnel Sante",
+        "createOrEditLabel": "Créer ou éditer un Professionnel Sante",
+        "notFound": "Aucun Professionnel Sante trouvé"
+      },
+      "created": "Un nouveau Professionnel Sante a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Professionnel Sante avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Professionnel Sante avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Professionnel Sante {{ id }} ?"
+      },
+      "detail": {
+        "title": "Professionnel Sante"
+      },
+      "nom": "Nom",
+      "vaccination": "Vaccination",
+      "localite": "Localite",
+      "centre": "Centre"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "jenovTest2App": {
+    "patient": {
+      "home": {
+        "title": "Patients",
+        "createLabel": "Créer un nouveau Patient",
+        "createOrEditLabel": "Créer ou éditer un Patient",
+        "notFound": "Aucun Patient trouvé"
+      },
+      "created": "Un nouveau Patient a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Patient avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Patient avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Patient {{ id }} ?"
+      },
+      "detail": {
+        "title": "Patient"
+      },
+      "noAvs": "No Avs",
+      "dateNaissance": "Date Naissance",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "sexe": "Sexe",
+      "adresse": "Adresse",
+      "telephone": "Telephone",
+      "email": "Email",
+      "numeroAssure": "Numero Assure",
+      "groupeRisque": "Groupe Risque",
+      "vaccination": "Vaccination",
+      "localite": "Localite"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "jenovTest2App": {
+    "localite": {
+      "home": {
+        "title": "Localites",
+        "createLabel": "Créer un nouveau Localite",
+        "createOrEditLabel": "Créer ou éditer un Localite",
+        "notFound": "Aucun Localite trouvé"
+      },
+      "created": "Un nouveau Localite a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Localite avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Localite avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Localite {{ id }} ?"
+      },
+      "detail": {
+        "title": "Localite"
+      },
+      "npa": "Npa",
+      "commune": "Commune"
+    }
+  }
+}

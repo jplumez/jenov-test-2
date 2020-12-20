@@ -1,0 +1,42 @@
+{
+  "name": "ProfessionnelSante",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "vaccination",
+      "otherEntityRelationshipName": "executant",
+      "relationshipName": "vaccination"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "localite",
+      "otherEntityRelationshipName": "professionnelSante",
+      "relationshipName": "localite",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "centre",
+      "otherEntityRelationshipName": "professionnelSante",
+      "relationshipName": "centre",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201220184735",
+  "entityTableName": "professionnel_sante",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

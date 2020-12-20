@@ -1,0 +1,26 @@
+{
+  "jenovTest2App": {
+    "creneauHoraire": {
+      "home": {
+        "title": "CreneauHoraires",
+        "createLabel": "Créer un nouveau Creneau Horaire",
+        "createOrEditLabel": "Créer ou éditer un Creneau Horaire",
+        "notFound": "Aucun Creneau Horaire trouvé"
+      },
+      "created": "Un nouveau Creneau Horaire a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Creneau Horaire avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Creneau Horaire avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Creneau Horaire {{ id }} ?"
+      },
+      "detail": {
+        "title": "Creneau Horaire"
+      },
+      "capacite": "Capacite",
+      "heureDebut": "Heure Debut",
+      "heureFin": "Heure Fin",
+      "vaccination": "Vaccination",
+      "centre": "Centre"
+    }
+  }
+}

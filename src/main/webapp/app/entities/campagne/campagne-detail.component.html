@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="campagne">
+            <h2><span jhiTranslate="jenovTest2App.campagne.detail.title">Campagne</span> {{ campagne.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jenovTest2App.campagne.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ campagne.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.campagne.description">Description</span></dt>
+                <dd>
+                    <span>{{ campagne.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.campagne.debut">Debut</span></dt>
+                <dd>
+                    <span>{{ campagne.debut }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.campagne.fin">Fin</span></dt>
+                <dd>
+                    <span>{{ campagne.fin }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.campagne.nbJoursRappel">Nb Jours Rappel</span></dt>
+                <dd>
+                    <span>{{ campagne.nbJoursRappel }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.campagne.remarques">Remarques</span></dt>
+                <dd>
+                    <span>{{ campagne.remarques }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.campagne.centre">Centre</span></dt>
+                <dd>
+                    <div *ngIf="campagne.centre">
+                        <a [routerLink]="['/centre', campagne.centre?.id, 'view']">{{ campagne.centre?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/campagne', campagne.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

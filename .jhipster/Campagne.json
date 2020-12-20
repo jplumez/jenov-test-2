@@ -1,0 +1,53 @@
+{
+  "name": "Campagne",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "debut",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "fin",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "nbJoursRappel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "remarques",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "centre",
+      "otherEntityRelationshipName": "campagne"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "questionnaire",
+      "otherEntityRelationshipName": "campagne",
+      "relationshipName": "questionnaire"
+    }
+  ],
+  "changelogDate": "20201220183935",
+  "entityTableName": "campagne",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="centre">
+            <h2><span jhiTranslate="jenovTest2App.centre.detail.title">Centre</span> {{ centre.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jenovTest2App.centre.code">Code</span></dt>
+                <dd>
+                    <span>{{ centre.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.centre.localite">Localite</span></dt>
+                <dd>
+                    <span>{{ centre.localite }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovTest2App.centre.description">Description</span></dt>
+                <dd>
+                    <span>{{ centre.description }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/centre', centre.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

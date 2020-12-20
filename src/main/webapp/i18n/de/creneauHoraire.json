@@ -1,0 +1,26 @@
+{
+  "jenovTest2App": {
+    "creneauHoraire": {
+      "home": {
+        "title": "Creneau Horaires",
+        "createLabel": "Creneau Horaire erstellen",
+        "createOrEditLabel": "Creneau Horaire erstellen oder bearbeiten",
+        "notFound": "No Creneau Horaires found"
+      },
+      "created": "Creneau Horaire erstellt mit ID {{ param }}",
+      "updated": "Creneau Horaire aktualisiert mit ID {{ param }}",
+      "deleted": "Creneau Horaire gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Creneau Horaire {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Creneau Horaire"
+      },
+      "capacite": "Capacite",
+      "heureDebut": "Heure Debut",
+      "heureFin": "Heure Fin",
+      "vaccination": "Vaccination",
+      "centre": "Centre"
+    }
+  }
+}

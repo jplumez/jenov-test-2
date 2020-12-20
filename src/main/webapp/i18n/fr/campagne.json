@@ -1,0 +1,29 @@
+{
+  "jenovTest2App": {
+    "campagne": {
+      "home": {
+        "title": "Campagnes",
+        "createLabel": "Créer un nouveau Campagne",
+        "createOrEditLabel": "Créer ou éditer un Campagne",
+        "notFound": "Aucun Campagne trouvé"
+      },
+      "created": "Un nouveau Campagne a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Campagne avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Campagne avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Campagne {{ id }} ?"
+      },
+      "detail": {
+        "title": "Campagne"
+      },
+      "nom": "Nom",
+      "description": "Description",
+      "debut": "Debut",
+      "fin": "Fin",
+      "nbJoursRappel": "Nb Jours Rappel",
+      "remarques": "Remarques",
+      "centre": "Centre",
+      "questionnaire": "Questionnaire"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "jenovTest2App": {
+    "questionnaire": {
+      "home": {
+        "title": "Questionnaires",
+        "createLabel": "Questionnaire erstellen",
+        "createOrEditLabel": "Questionnaire erstellen oder bearbeiten",
+        "notFound": "No Questionnaires found"
+      },
+      "created": "Questionnaire erstellt mit ID {{ param }}",
+      "updated": "Questionnaire aktualisiert mit ID {{ param }}",
+      "deleted": "Questionnaire gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Questionnaire {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Questionnaire"
+      },
+      "question": "Question",
+      "campagne": "Campagne"
+    }
+  }
+}

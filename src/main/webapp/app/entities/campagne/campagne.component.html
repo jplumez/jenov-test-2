@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jenovTest2App.campagne.home.title">Campagnes</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-campagne" [routerLink]="['/campagne/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jenovTest2App.campagne.home.createLabel">
+            Create a new Campagne
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="campagnes?.length === 0">
+        <span jhiTranslate="jenovTest2App.campagne.home.notFound">No campagnes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="campagnes && campagnes.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovTest2App.campagne.nom">Nom</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovTest2App.campagne.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovTest2App.campagne.debut">Debut</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovTest2App.campagne.fin">Fin</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovTest2App.campagne.nbJoursRappel">Nb Jours Rappel</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovTest2App.campagne.remarques">Remarques</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovTest2App.campagne.centre">Centre</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let campagne of campagnes ;trackBy: trackId">
+                    <td><a [routerLink]="['/campagne', campagne.id, 'view']">{{ campagne.id }}</a></td>
+                    <td>{{ campagne.nom }}</td>
+                    <td>{{ campagne.description }}</td>
+                    <td>{{ campagne.debut | date:'mediumDate' }}</td>
+                    <td>{{ campagne.fin | date:'mediumDate' }}</td>
+                    <td>{{ campagne.nbJoursRappel }}</td>
+                    <td>{{ campagne.remarques }}</td>
+                    <td>
+                        <div *ngIf="campagne.centre">
+                            <a [routerLink]="['/centre', campagne.centre?.id, 'view']" >{{ campagne.centre?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/campagne', campagne.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/campagne', campagne.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(campagne)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
