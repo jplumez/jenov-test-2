@@ -1,0 +1,126 @@
+
+enum Sexe {
+	M, F
+} 
+
+enum GroupeRisque {
+	PERSONNE_VULNERABLE,
+    CORPS_MEDICAL,
+    CONTACT_PERSONNE_VULNERABLE,
+    INSTITUTION_COMMUNAUTAIRE,
+    PERSONNE_SAINE
+}
+
+entity Campagne {
+	nom String
+    description String
+    debut LocalDate
+    fin LocalDate
+    nbJoursRappel Integer
+    remarques String
+}
+
+entity Questionnaire {
+	question String
+}
+
+relationship ManyToOne {
+	Questionnaire to Campagne{questionnaire}
+}
+
+entity Localite {
+	npa String
+    commune String
+}
+
+entity Vaccination {
+	dateCreation Instant
+	dateRendezVous Instant
+	dateVaccin Instant
+}
+
+entity Patient {
+    noAvs String required
+    dateNaissance LocalDate
+	nom String
+    prenom String
+    sexe Sexe
+    adresse String
+    telephone String
+    email String
+    numeroAssure String,
+    groupeRisque GroupeRisque
+}
+
+relationship ManyToOne {
+	Patient to Vaccination{patient}
+}
+
+entity Centre {
+	code String required,
+    localite String required,
+    description String
+}
+
+relationship ManyToOne {
+	Campagne to Centre{campagne}
+}
+
+entity CreneauHoraire {
+	capacite Integer
+    heureDebut Instant
+    heureFin Instant
+}
+
+relationship OneToMany {
+	CreneauHoraire to Vaccination{creneau}
+    Centre to CreneauHoraire{centre}
+}
+
+
+entity LotVaccin {
+	stockInitial Long,
+	stockActuel Long,
+    heureInventaire Instant
+}
+
+relationship OneToMany {
+	LotVaccin to Vaccination{stockVaccin},
+    Centre to LotVaccin{centre},
+    Profession to ProfessionnelSante{profession}
+    ProfessionnelSante to Patient{medecinTraitant}
+}
+
+relationship ManyToOne {
+	ProfessionnelSante{localite} to Localite
+    Patient{localite} to Localite
+}
+
+// relationship ManyToMany {
+	// Job{task(title)} to Task{job}
+// }
+
+
+// relationship ManyToOne {
+	// Employee{manager} to Employee
+// }
+
+// defining multiple oneToOne relationships
+// relationship OneToOne {
+	// JobHistory{job} to Job,
+	// JobHistory{department} to Department,
+	// JobHistory{employee} to Employee
+// }
+
+// Set pagination options
+// paginate JobHistory, Employee with infinite-scroll
+// paginate Job with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+// service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
